@@ -122,6 +122,7 @@ public class PlayerController {
     @GetMapping("/players/{id}")
     public String deletePlayer(@PathVariable Long id) {
         playerService.deletePlayerById(id);
+        playerActionRepository.deleteByplayer_id(id);
         return "redirect:/players";
     }
 
